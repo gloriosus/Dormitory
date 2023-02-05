@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6604F26B-B583-48DB-BEFE-22B3D1888A2E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dormitory</RootNamespace>
+    <AssemblyName>Dormitory</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>user5.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="course_selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="course_selector.Designer.cs">
+      <DependentUpon>course_selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="date_selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="date_selector.Designer.cs">
+      <DependentUpon>date_selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="debt_payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="debt_payment.Designer.cs">
+      <DependentUpon>debt_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eviction_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eviction_order.Designer.cs">
+      <DependentUpon>eviction_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eviction_settling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eviction_settling.Designer.cs">
+      <DependentUpon>eviction_settling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniEditor.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notifications.Designer.cs">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Record_edit.Designer.cs">
+      <DependentUpon>Record_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Record_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Record_add.Designer.cs">
+      <DependentUpon>Record_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Record_edit_settle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Record_edit_settle.Designer.cs">
+      <DependentUpon>Record_edit_settle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs" />
+    <Compile Include="ReportXls.cs" />
+    <Compile Include="Table_budget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_budget.Designer.cs">
+      <DependentUpon>Table_budget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_contract.Designer.cs">
+      <DependentUpon>Table_contract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_education.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_education.Designer.cs">
+      <DependentUpon>Table_education.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_stage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_stage.Designer.cs">
+      <DependentUpon>Table_stage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_status.Designer.cs">
+      <DependentUpon>Table_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_form.Designer.cs">
+      <DependentUpon>Table_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_faculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_faculty.Designer.cs">
+      <DependentUpon>Table_faculty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_group.Designer.cs">
+      <DependentUpon>Table_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_course.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_course.Designer.cs">
+      <DependentUpon>Table_course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_country.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_country.Designer.cs">
+      <DependentUpon>Table_country.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_dormitory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_dormitory.Designer.cs">
+      <DependentUpon>Table_dormitory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_user.Designer.cs">
+      <DependentUpon>Table_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table_violation_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table_violation_item.Designer.cs">
+      <DependentUpon>Table_violation_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userdata.cs" />
+    <Compile Include="User_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_add.Designer.cs">
+      <DependentUpon>User_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_edit.Designer.cs">
+      <DependentUpon>User_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="violation_control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="violation_control.Designer.cs">
+      <DependentUpon>violation_control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="word_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="word_excel.Designer.cs">
+      <DependentUpon>word_excel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="course_selector.resx">
+      <DependentUpon>course_selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="date_selector.resx">
+      <DependentUpon>date_selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="debt_payment.resx">
+      <DependentUpon>debt_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eviction_order.resx">
+      <DependentUpon>eviction_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eviction_settling.resx">
+      <DependentUpon>eviction_settling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications.resx">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Record_edit.resx">
+      <DependentUpon>Record_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Record_add.resx">
+      <DependentUpon>Record_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Record_edit_settle.resx">
+      <DependentUpon>Record_edit_settle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_budget.resx">
+      <DependentUpon>Table_budget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_contract.resx">
+      <DependentUpon>Table_contract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_education.resx">
+      <DependentUpon>Table_education.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_stage.resx">
+      <DependentUpon>Table_stage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_status.resx">
+      <DependentUpon>Table_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_form.resx">
+      <DependentUpon>Table_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_faculty.resx">
+      <DependentUpon>Table_faculty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_group.resx">
+      <DependentUpon>Table_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_course.resx">
+      <DependentUpon>Table_course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_country.resx">
+      <DependentUpon>Table_country.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_dormitory.resx">
+      <DependentUpon>Table_dormitory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_user.resx">
+      <DependentUpon>Table_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table_violation_item.resx">
+      <DependentUpon>Table_violation_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_add.resx">
+      <DependentUpon>User_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_edit.resx">
+      <DependentUpon>User_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="violation_control.resx">
+      <DependentUpon>violation_control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="word_excel.resx">
+      <DependentUpon>word_excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_add_blue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_hardware.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_hardware %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_add_minus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen_write_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_write.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol_-_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document_Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol_-_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol_-_Remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="user5.ico" />
+    <None Include="Resources\notification_warning.png" />
+    <None Include="Resources\report_1.ico" />
+    <None Include="Resources\report_2.ico" />
+    <None Include="Resources\report_3.ico" />
+    <None Include="Resources\report_4.ico" />
+    <None Include="Resources\report_5.ico" />
+    <None Include="Resources\report_6.ico" />
+    <None Include="Resources\report_7.ico" />
+    <None Include="Resources\report_8.ico" />
+    <None Include="Resources\report_7.png" />
+    <None Include="Resources\report_2.png" />
+    <None Include="Resources\report_3.png" />
+    <None Include="Resources\report_4.png" />
+    <None Include="Resources\report_5.png" />
+    <None Include="Resources\report_6.png" />
+    <None Include="Resources\report_8.png" />
+    <None Include="Resources\record_first.png" />
+    <None Include="Resources\record_prev.png" />
+    <None Include="Resources\record_next.png" />
+    <None Include="Resources\record_last.png" />
+    <None Include="Resources\page_prev.png" />
+    <None Include="Resources\page_next.png" />
+    <None Include="Resources\refresh.png" />
+    <Content Include="Twitter.ico" />
+    <None Include="Resources\Buddy_Chat.ico" />
+    <Content Include="Tag_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
